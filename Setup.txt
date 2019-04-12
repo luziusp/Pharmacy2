@@ -1,0 +1,2 @@
+cd /rocket/products/rocketdb
+./rocketdb -createRootNode rh -cluster root -path /rocket/nodes/rh
