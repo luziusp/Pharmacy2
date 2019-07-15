@@ -21,7 +21,7 @@ public class UserTest {
 		try (var trx = Transaction.begin()) {
 			for (var i = 0; i < 10000; i++) {
 				var user = new PUser();
-				user.setName("user" + i);
+				user.setName("user" + i);	
 				PUser.repository.store(user);
 			}
 			trx.commit();
