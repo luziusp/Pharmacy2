@@ -10,13 +10,13 @@ namespace Pharmacy.Types.Base
 {
     #pragma warning disable 3021
 
-    public abstract class PUser
+    public abstract class Patient
     {
 
         [CLSCompliantAttribute(false)]
         public const string __typeId = "43dd91d2-5d2b-11e9-8e99-4bbbc6df7cad";
         [CLSCompliantAttribute(false)]
-        public const string __typeName = "pharmacy.PUser";
+        public const string __typeName = "pharmacy.Patient";
 
         private string __domainId;
         private string __ownerId;
@@ -28,6 +28,11 @@ namespace Pharmacy.Types.Base
         private long? __ttsTo;
         private string id;
         private string name;
+        private System.DateTime dateOfBirth;
+        private System.DateTime dateOfDeath;
+        private string firstName;
+        private string doctorOfId;
+        private string[] prescribedIds = new string[0];
 
         [CLSCompliantAttribute(false)]
         public virtual string __TypeId {
@@ -97,13 +102,38 @@ namespace Pharmacy.Types.Base
             set { name = value; }
         }
 
-        public static Pharmacy.Types.PUser FromJson(JObject jo)
+        public virtual System.DateTime DateOfBirth {
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
+        }
+
+        public virtual System.DateTime DateOfDeath {
+            get { return dateOfDeath; }
+            set { dateOfDeath = value; }
+        }
+
+        public virtual string FirstName {
+            get { return firstName; }
+            set { firstName = value; }
+        }
+
+        public virtual string DoctorOfId {
+            get { return doctorOfId; }
+            set { doctorOfId = value; }
+        }
+
+        public virtual string[] PrescribedIds {
+            get { return prescribedIds; }
+            set { prescribedIds = value != null ? value : new string[0]; }
+        }
+
+        public static Pharmacy.Types.Patient FromJson(JObject jo)
         {
             if (jo == null)
             {
                 return null;
             }
-            Pharmacy.Types.PUser obj = new Pharmacy.Types.PUser();
+            Pharmacy.Types.Patient obj = new Pharmacy.Types.Patient();
             obj.SetJson(jo);
             return obj;
         }
@@ -120,6 +150,11 @@ namespace Pharmacy.Types.Base
             this.__TtsTo = (long?)jo["__ttsTo"];
             this.Id = (string)jo["id"];
             this.Name = (string)jo["name"];
+            this.DateOfBirth = (System.DateTime)jo["dateOfBirth"];
+            this.DateOfDeath = (System.DateTime)jo["dateOfDeath"];
+            this.FirstName = (string)jo["firstName"];
+            this.DoctorOfId = (string)jo["doctorOfId"];
+            this.PrescribedIds = jo.GetValue("prescribedIds") != null ? jo.GetValue("prescribedIds").Values<string>().ToArray() : new string[] {};
         }
 
         public virtual JObject ToJson()
@@ -151,6 +186,33 @@ namespace Pharmacy.Types.Base
             {
                 writer.WritePropertyName("name");
                 writer.WriteValue(this.Name);
+            }
+            {
+                writer.WritePropertyName("dateOfBirth");
+                writer.WriteValue(this.DateOfBirth.ToUniversalTime().ToString("yyyy-MM-dd"));
+            }
+            {
+                writer.WritePropertyName("dateOfDeath");
+                writer.WriteValue(this.DateOfDeath.ToUniversalTime().ToString("yyyy-MM-dd"));
+            }
+            {
+                writer.WritePropertyName("firstName");
+                writer.WriteValue(this.FirstName);
+            }
+            {
+                writer.WritePropertyName("doctorOfId");
+                writer.WriteValue(this.DoctorOfId);
+            }
+            {
+                writer.WritePropertyName("prescribedIds");
+                writer.WriteStartArray();
+                if (this.PrescribedIds != null) {
+                        for (int i = 0; i < this.PrescribedIds.Length; i++)
+                        {
+                            writer.WriteValue(this.PrescribedIds[i]);
+                        }
+                }
+                writer.WriteEndArray();
             }
         }
 

@@ -17,25 +17,29 @@ import com.helmedica.meta.factories.ObjectFactory;
 import com.helmedica.meta.interfaces.Id;
 import com.helmedica.meta.types.Class;
 import com.helmedica.meta.types.ClassId;
+import java.time.LocalDate;
+import java.util.List;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
-import pharmacy.repositories.PUserRepository;
-import pharmacy.types.PUserId;
+import pharmacy.repositories.PatientRepository;
+import pharmacy.types.Doctor;
+import pharmacy.types.PatientId;
+import pharmacy.types.PatientMedication;
 
 @Generated(by="rocketdb", comment="DO NOT EDIT THIS GENERATED CODE")
-public abstract class PUser implements RepositoryObject {
+public abstract class Patient implements RepositoryObject {
 
     // ===========================================================================================
     // ==== Factory
     // ===========================================================================================
 
-    public static ObjectFactory<pharmacy.types.PUser> factory = null;
+    public static ObjectFactory<pharmacy.types.Patient> factory = null;
     // ===========================================================================================
     // ==== Static members
     // ===========================================================================================
 
     public static final ClassId __typeId = ClassId.fromString("clas-43dd91d2-5d2b-11e9-8e99-4bbbc6df7cad");
-    public static final short __typeVersion = 1;
+    public static final short __typeVersion = 2;
 
     // ===========================================================================================
     // ==== Members
@@ -72,7 +76,7 @@ public abstract class PUser implements RepositoryObject {
     // ==== Properties
     // ===========================================================================================
 
-    public PUserId getId() {
+    public PatientId getId() {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
@@ -80,7 +84,7 @@ public abstract class PUser implements RepositoryObject {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
-    protected void setId(PUserId id) {
+    protected void setId(PatientId id) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
@@ -144,6 +148,90 @@ public abstract class PUser implements RepositoryObject {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
+    public LocalDate getDateOfBirth() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public LocalDate getDateOfDeath() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setDateOfDeath(LocalDate dateOfDeath) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public String getFirstName() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setFirstName(String firstName) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public Doctor getDoctorOf() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setDoctorOf(Doctor doctorOf) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public PatientId getDoctorOfId() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setDoctorOfId(PatientId doctorOfId) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public List<? extends PatientMedication> getPrescribed() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPrescribed(List<? extends PatientMedication> objects) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void addToPrescribed(PatientMedication object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void addToPrescribed(int index, PatientMedication object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void removeFromPrescribed(PatientMedication object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public List<PatientId> getPrescribedIds() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPrescribedIds(List<? extends PatientId> objects) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void addToPrescribedIds(PatientId object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void addToPrescribedIds(int index, PatientId object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void removeFromPrescribedIds(PatientId object) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void clearPrescribedIds() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
     // ===========================================================================================
     // ==== Set string values
     // ===========================================================================================
@@ -204,7 +292,7 @@ public abstract class PUser implements RepositoryObject {
     // ==== Cloning
     // ===========================================================================================
 
-    public pharmacy.types.PUser clone() {
+    public pharmacy.types.Patient clone() {
         return clone(false);
     }
 
@@ -213,7 +301,7 @@ public abstract class PUser implements RepositoryObject {
         return (T)clone(true);
     }
 
-    public pharmacy.types.PUser clone(boolean asDuplicate) {
+    public pharmacy.types.Patient clone(boolean asDuplicate) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
@@ -264,23 +352,23 @@ public abstract class PUser implements RepositoryObject {
     // ==== RepositoryObject
     // ===========================================================================================
 
-    public static final PUserRepository<PUserId, pharmacy.types.PUser> repository;
+    public static final PatientRepository<PatientId, pharmacy.types.Patient> repository;
     static {
         repository = null;
     }
 
     @Override
-    public PUserRepository<? extends PUserId, ? extends pharmacy.types.PUser> get__repository() {
+    public PatientRepository<? extends PatientId, ? extends pharmacy.types.Patient> get__repository() {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
     @Override
-    public PUserRepository<? extends PUserId, ? extends pharmacy.types.PUser> get__objectRepository() {
+    public PatientRepository<? extends PatientId, ? extends pharmacy.types.Patient> get__objectRepository() {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
     @Override
-    public PUserId get__id() {
+    public PatientId get__id() {
         throw new UnsupportedOperationException("Method not implemented");
     }
 
