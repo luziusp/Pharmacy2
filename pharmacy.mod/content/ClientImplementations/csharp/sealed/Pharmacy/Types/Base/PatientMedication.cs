@@ -33,6 +33,7 @@ namespace Pharmacy.Types.Base
         private System.Numerics.BigInteger posologyMidday;
         private System.Numerics.BigInteger posologyEvening;
         private System.Numerics.BigInteger posologyNight;
+        private string prescriberId;
         private string prescribedToId;
         private string basedForId;
 
@@ -129,6 +130,11 @@ namespace Pharmacy.Types.Base
             set { posologyNight = value; }
         }
 
+        public virtual string PrescriberId {
+            get { return prescriberId; }
+            set { prescriberId = value; }
+        }
+
         public virtual string PrescribedToId {
             get { return prescribedToId; }
             set { prescribedToId = value; }
@@ -167,6 +173,7 @@ namespace Pharmacy.Types.Base
             this.PosologyMidday = jo["posologyMidday"].Value<System.Numerics.BigInteger>();
             this.PosologyEvening = jo["posologyEvening"].Value<System.Numerics.BigInteger>();
             this.PosologyNight = jo["posologyNight"].Value<System.Numerics.BigInteger>();
+            this.PrescriberId = (string)jo["prescriberId"];
             this.PrescribedToId = (string)jo["prescribedToId"];
             this.BasedForId = (string)jo["basedForId"];
         }
@@ -220,6 +227,10 @@ namespace Pharmacy.Types.Base
             {
                 writer.WritePropertyName("posologyNight");
                 writer.WriteValue(this.PosologyNight);
+            }
+            {
+                writer.WritePropertyName("prescriberId");
+                writer.WriteValue(this.PrescriberId);
             }
             {
                 writer.WritePropertyName("prescribedToId");

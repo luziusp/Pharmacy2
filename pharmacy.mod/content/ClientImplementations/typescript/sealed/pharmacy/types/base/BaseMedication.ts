@@ -17,6 +17,12 @@ export abstract class BaseMedication {
     private _____sequence: number = null;
     private _____ttsTo: Long = null;
     private ___id: string = null;
+    private ___pharmacode: string = null;
+    private ___name: string = null;
+    private ___price: number = null;
+    private ___ean: string = null;
+    private ___lastUpdate: string = null;
+    private ___isActive: boolean = null;
     private ___basedOnIds: string[] = [];
 
     public get __typeId(): string {
@@ -100,6 +106,54 @@ export abstract class BaseMedication {
         this.___id = value;
     }
 
+    public get pharmacode(): string {
+        return this.___pharmacode;
+    }
+
+    public set pharmacode(value: string) {
+        this.___pharmacode = value;
+    }
+
+    public get name(): string {
+        return this.___name;
+    }
+
+    public set name(value: string) {
+        this.___name = value;
+    }
+
+    public get price(): number {
+        return this.___price;
+    }
+
+    public set price(value: number) {
+        this.___price = value;
+    }
+
+    public get ean(): string {
+        return this.___ean;
+    }
+
+    public set ean(value: string) {
+        this.___ean = value;
+    }
+
+    public get lastUpdate(): string {
+        return this.___lastUpdate;
+    }
+
+    public set lastUpdate(value: string) {
+        this.___lastUpdate = value;
+    }
+
+    public get isActive(): boolean {
+        return this.___isActive;
+    }
+
+    public set isActive(value: boolean) {
+        this.___isActive = value;
+    }
+
     public get basedOnIds(): string[] {
         return this.___basedOnIds;
     }
@@ -133,6 +187,12 @@ export abstract class BaseMedication {
             this.__sequence = json['__sequence'] != null ? json['__sequence'] : null;
             this.__ttsTo = json['__ttsTo'] != null ? Long.fromString(json['__ttsTo']) : null;
             this.id = json['id'] != null ? json['id'] : null;
+            this.pharmacode = json['pharmacode'] != null ? json['pharmacode'] : null;
+            this.name = json['name'] != null ? json['name'] : null;
+            this.price = json['price'] != null ? json['price'] : null;
+            this.ean = json['ean'] != null ? json['ean'] : null;
+            this.lastUpdate = json['lastUpdate'] != null ? json['lastUpdate'] : null;
+            this.isActive = json['isActive'] != null ? json['isActive'] : null;
             this.basedOnIds = json['basedOnIds'] != null ? json['basedOnIds'] : [];
         }
     }
@@ -143,6 +203,24 @@ export abstract class BaseMedication {
         }
         {
             json['id'] = this.id;
+        }
+        {
+            json['pharmacode'] = this.pharmacode;
+        }
+        {
+            json['name'] = this.name;
+        }
+        {
+            json['price'] = this.price;
+        }
+        {
+            json['ean'] = this.ean;
+        }
+        {
+            json['lastUpdate'] = this.lastUpdate;
+        }
+        {
+            json['isActive'] = this.isActive;
         }
         {
             json['basedOnIds'] = this.basedOnIds;

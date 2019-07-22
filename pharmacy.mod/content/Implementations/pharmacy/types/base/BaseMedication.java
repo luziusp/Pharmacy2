@@ -4,6 +4,7 @@ import com.helmedica.administration.user.types.User;
 import com.helmedica.administration.user.types.UserId;
 import com.helmedica.common.annotations.Generated;
 import com.helmedica.common.json.JsonSerializerBehavior;
+import com.helmedica.common.types.Data;
 import com.helmedica.common.types.Uuid;
 import com.helmedica.database.data.types.Operation;
 import com.helmedica.database.data.types.State;
@@ -135,6 +136,54 @@ public abstract class BaseMedication implements RepositoryObject {
     }
 
     public long get__ttsTo() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public String getPharmacode() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPharmacode(String pharmacode) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public String getName() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setName(String name) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public double getPrice() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPrice(double price) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public String getEan() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setEan(String ean) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public Data getLastUpdate() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setLastUpdate(Data lastUpdate) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public boolean isActive() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setIsActive(boolean isActive) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 

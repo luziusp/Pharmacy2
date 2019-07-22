@@ -23,6 +23,7 @@ import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import pharmacy.repositories.PatientMedicationRepository;
 import pharmacy.types.BaseMedication;
+import pharmacy.types.Doctor;
 import pharmacy.types.Patient;
 import pharmacy.types.PatientId;
 
@@ -185,6 +186,22 @@ public abstract class PatientMedication implements RepositoryObject {
     }
 
     public void setPosologyNight(BigInteger posologyNight) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public Doctor getPrescriber() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPrescriber(Doctor prescriber) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public PatientId getPrescriberId() {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
+
+    public void setPrescriberId(PatientId prescriberId) {
         throw new UnsupportedOperationException("Method not implemented");
     }
 

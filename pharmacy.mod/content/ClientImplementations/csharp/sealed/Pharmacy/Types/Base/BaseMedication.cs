@@ -27,6 +27,12 @@ namespace Pharmacy.Types.Base
         private int? __sequence;
         private long? __ttsTo;
         private string id;
+        private string pharmacode;
+        private string name;
+        private double price;
+        private string ean;
+        private byte[] lastUpdate;
+        private bool isActive;
         private string[] basedOnIds = new string[0];
 
         [CLSCompliantAttribute(false)]
@@ -92,6 +98,36 @@ namespace Pharmacy.Types.Base
             set { id = value; }
         }
 
+        public virtual string Pharmacode {
+            get { return pharmacode; }
+            set { pharmacode = value; }
+        }
+
+        public virtual string Name {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public virtual double Price {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public virtual string Ean {
+            get { return ean; }
+            set { ean = value; }
+        }
+
+        public virtual byte[] LastUpdate {
+            get { return lastUpdate; }
+            set { lastUpdate = value; }
+        }
+
+        public virtual bool IsActive {
+            get { return isActive; }
+            set { isActive = value; }
+        }
+
         public virtual string[] BasedOnIds {
             get { return basedOnIds; }
             set { basedOnIds = value != null ? value : new string[0]; }
@@ -119,6 +155,12 @@ namespace Pharmacy.Types.Base
             this.__Sequence = (int?)jo["__sequence"];
             this.__TtsTo = (long?)jo["__ttsTo"];
             this.Id = (string)jo["id"];
+            this.Pharmacode = (string)jo["pharmacode"];
+            this.Name = (string)jo["name"];
+            this.Price = (double)jo["price"];
+            this.Ean = (string)jo["ean"];
+            this.LastUpdate = (byte[])jo["lastUpdate"];
+            this.IsActive = (bool)jo["isActive"];
             this.BasedOnIds = jo.GetValue("basedOnIds") != null ? jo.GetValue("basedOnIds").Values<string>().ToArray() : new string[] {};
         }
 
@@ -147,6 +189,42 @@ namespace Pharmacy.Types.Base
             {
                 writer.WritePropertyName("id");
                 writer.WriteValue(this.Id);
+            }
+            {
+                writer.WritePropertyName("pharmacode");
+                if (this.Pharmacode != null) {
+                        writer.WriteValue(this.Pharmacode);
+                }
+                else
+                {
+                    writer.WriteNull();
+                }
+            }
+            {
+                writer.WritePropertyName("name");
+                writer.WriteValue(this.Name);
+            }
+            {
+                writer.WritePropertyName("price");
+                writer.WriteValue(this.Price);
+            }
+            {
+                writer.WritePropertyName("ean");
+                if (this.Ean != null) {
+                        writer.WriteValue(this.Ean);
+                }
+                else
+                {
+                    writer.WriteNull();
+                }
+            }
+            {
+                writer.WritePropertyName("lastUpdate");
+                writer.WriteValue(this.LastUpdate);
+            }
+            {
+                writer.WritePropertyName("isActive");
+                writer.WriteValue(this.IsActive);
             }
             {
                 writer.WritePropertyName("basedOnIds");

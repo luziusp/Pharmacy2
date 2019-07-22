@@ -25,6 +25,7 @@ export abstract class PatientMedication {
     private ___posologyMidday: BigInteger = null;
     private ___posologyEvening: BigInteger = null;
     private ___posologyNight: BigInteger = null;
+    private ___prescriberId: string = null;
     private ___prescribedToId: string = null;
     private ___basedForId: string = null;
 
@@ -157,6 +158,14 @@ export abstract class PatientMedication {
         this.___posologyNight = value;
     }
 
+    public get prescriberId(): string {
+        return this.___prescriberId;
+    }
+
+    public set prescriberId(value: string) {
+        this.___prescriberId = value;
+    }
+
     public get prescribedToId(): string {
         return this.___prescribedToId;
     }
@@ -204,6 +213,7 @@ export abstract class PatientMedication {
             this.posologyMidday = json['posologyMidday'] != null ? bigInt(json['posologyMidday']) : null;
             this.posologyEvening = json['posologyEvening'] != null ? bigInt(json['posologyEvening']) : null;
             this.posologyNight = json['posologyNight'] != null ? bigInt(json['posologyNight']) : null;
+            this.prescriberId = json['prescriberId'] != null ? json['prescriberId'] : null;
             this.prescribedToId = json['prescribedToId'] != null ? json['prescribedToId'] : null;
             this.basedForId = json['basedForId'] != null ? json['basedForId'] : null;
         }
@@ -233,6 +243,9 @@ export abstract class PatientMedication {
         }
         {
             json['posologyNight'] = this.posologyNight !== null ? this.posologyNight.toString() : null;
+        }
+        {
+            json['prescriberId'] = this.prescriberId;
         }
         {
             json['prescribedToId'] = this.prescribedToId;
